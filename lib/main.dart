@@ -21,43 +21,58 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('First Screen'),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.search, color: Colors.white),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: Center(
-          child: Container(
-            height: 100,
-            width: 100,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              shape: BoxShape.circle,
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black,
-                  offset: Offset(3, 6),
-                  blurRadius: 10,
-                )
-              ],
-              border: Border.all(
-                color: Colors.green,
-                width: 3,
-              ),
-            ),
-            child: const Center(
-              child: Text(
-                'Hi',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
+      appBar: AppBar(
+        title: const Text('First Screen'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.search, color: Colors.white),
+            onPressed: () {},
           ),
-        ));
+        ],
+      ),
+      body: Container(
+        height: 100,
+        color: Colors.black,
+        margin: const EdgeInsets.only(top: 20),
+        child: const Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.share,
+                    color: Colors.blue,
+                  ),
+                  Icon(
+                    Icons.thumb_up,
+                    color: Colors.blue,
+                  ),
+                  Icon(
+                    Icons.thumb_down,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.share,
+                    color: Colors.blue,
+                  ),
+                  Icon(
+                    Icons.thumb_up,
+                    color: Colors.blue,
+                  ),
+                  Icon(
+                    Icons.thumb_down,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ]),
+      ),
+    );
   }
 }
