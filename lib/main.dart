@@ -31,7 +31,6 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
       body: Container(
-        height: 100,
         color: Colors.black,
         margin: const EdgeInsets.only(top: 20),
         child: const Column(
@@ -70,6 +69,18 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 ],
+              ),
+              Icon(
+                Icons.share,
+                color: Colors.blue,
+              ),
+              Icon(
+                Icons.thumb_up,
+                color: Colors.blue,
+              ),
+              Icon(
+                Icons.thumb_down,
+                color: Colors.blue,
               ),
             ]),
       ),
