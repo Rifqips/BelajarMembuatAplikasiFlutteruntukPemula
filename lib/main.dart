@@ -21,37 +21,43 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-          onPressed: () {},
+        appBar: AppBar(
+          title: const Text('First Screen'),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.search, color: Colors.white),
+              onPressed: () {},
+            ),
+          ],
         ),
-      ),
-      body: Container(
-        color: Colors.blue,
-        margin: const EdgeInsets.all(10),
-        padding: const EdgeInsets.only(left: 20),
-        width: 200,
-        height: 200,
-        child: const Text(
-          'Hi',
-          style: TextStyle(fontSize: 40),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
-      ),
-    );
+        body: Center(
+          child: Container(
+            height: 100,
+            width: 100,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              shape: BoxShape.circle,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black,
+                  offset: Offset(3, 6),
+                  blurRadius: 10,
+                )
+              ],
+              border: Border.all(
+                color: Colors.green,
+                width: 3,
+              ),
+            ),
+            child: const Center(
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ),
+        ));
   }
 }
