@@ -37,8 +37,16 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {},
         ),
       ),
-      body: const Center(
-        child: Text('Hello World'),
+      body: Container(
+        color: Colors.blue,
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.only(left: 20),
+        width: 200,
+        height: 200,
+        child: const Text(
+          'Hi',
+          style: TextStyle(fontSize: 40),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
