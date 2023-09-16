@@ -5,23 +5,25 @@ class ObscuredTextFieldSample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: Image.network(
-            'https://picsum.photos/200/300',
-            width: 200,
-            height: 200,
+    return const Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Custom Font',
+            style: TextStyle(
+              fontFamily: 'OpenSans',
+              fontSize: 30,
+            ),
           ),
-        ),
-        Container(
-          child: Image.asset(
-            'images/tim3.png',
-            width: 200,
-            height: 200,
-          ),
-        ),
-      ],
+          Text(
+            'Custom Font',
+            style: TextStyle(  
+              fontSize: 30,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -33,7 +35,7 @@ class TextFieldExampleApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Obscured Textfield')),
-        body: const Center(
+        body: Container(
           child: ObscuredTextFieldSample(),
         ),
       ),

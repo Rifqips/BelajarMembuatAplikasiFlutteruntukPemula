@@ -60,6 +60,12 @@ flutter:
   assets:
     - images/tim3.png
 
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: fonts/static/OpenSans-SemiBold.ttf
+        - asset: fonts/static/OpenSans-Bold.ttf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
