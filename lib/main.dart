@@ -5,30 +5,23 @@ class ObscuredTextFieldSample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      width: 250,
-      height: 500,
-      child: Column(
-        children: [
-          TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Password',
-            ),
+    return Column(
+      children: [
+        Container(
+          child: Image.network(
+            'https://picsum.photos/200/300',
+            width: 200,
+            height: 200,
           ),
-          SizedBox(
-            height: 20,
+        ),
+        Container(
+          child: Image.asset(
+            'images/tim3.png',
+            width: 200,
+            height: 200,
           ),
-          TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Password',
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
