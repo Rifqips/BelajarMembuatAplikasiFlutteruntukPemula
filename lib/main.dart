@@ -1,4 +1,3 @@
-import 'package:exercise_project/detail_screen.dart';
 import 'package:exercise_project/main_screen.dart';
 import 'package:flutter/material.dart';
 
