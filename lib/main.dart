@@ -1,28 +1,31 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class ObscuredTextFieldSample extends StatelessWidget {
   const ObscuredTextFieldSample({super.key});
 
+  final List<int> numberList = const <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Custom Font',
-            style: TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 30,
+    return Scaffold(
+      body: ListView(
+        children: numberList.map((number) {
+          return Container(
+            height: 250,
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              border: Border.all(color: Colors.black),
             ),
-          ),
-          Text(
-            'Custom Font',
-            style: TextStyle(  
-              fontSize: 30,
+            child: Center(
+              child: Text(
+                '$number',
+                style: const TextStyle(fontSize: 50),
+              ),
             ),
-          )
-        ],
+          );
+        }).toList(),
       ),
     );
   }
