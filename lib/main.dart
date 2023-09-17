@@ -4,49 +4,83 @@ import 'package:flutter/material.dart';
 
 class ObscuredTextFieldSample extends StatelessWidget {
   const ObscuredTextFieldSample({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                ExpandedWidget(),
+                FlexibleWidget(),
+              ],
+            ),
+            Row(
+              children: [
+                ExpandedWidget(),
+                ExpandedWidget(),
+              ],
+            ),
+            Row(
+              children: [
+                FlexibleWidget(),
+                FlexibleWidget(),
+              ],
+            ),
+            Row(
+              children: [
+                FlexibleWidget(),
+                ExpandedWidget(),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-  final List<int> numberList = const <int>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+class ExpandedWidget extends StatelessWidget {
+  const ExpandedWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Expanded(
-          child: Container(
-            color: Colors.red,
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.teal, border: Border.all(color: Colors.white)),
+        child: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'Expanded',
+            style: TextStyle(color: Colors.white, fontSize: 24),
           ),
         ),
-        Expanded(
-          child: Container(
-            color: Colors.orange,
+      ),
+    );
+  }
+}
+
+class FlexibleWidget extends StatelessWidget {
+  const FlexibleWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Flexible(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.tealAccent,
+          border: Border.all(color: Colors.white),
+        ),
+        child: const Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'Flexible',
+            style: TextStyle(color: Colors.teal, fontSize: 24),
           ),
         ),
-        Expanded(
-          child: Container(
-            color: Colors.yellow,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.green,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.blue,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.indigo,
-          ),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.purple,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
