@@ -22,47 +22,63 @@ class FirstScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text("Pindah Screen"),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return SecondScreen(message);
-            }));
-          },
-        ),
-      ),
-    );
-  }
-}
+    Size screenSize = MediaQuery.of(context).size;
 
-class SecondScreen extends StatelessWidget {
-  final String message;
-  const SecondScreen(this.message, {Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(message),
-            OutlinedButton(
-              child: const Text('Kembali'),
-              onPressed: () {
-                Navigator.pop(context);
+      backgroundColor: Colors.blueGrey,
+      body: Row(
+        children: [
+          Expanded(
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      'MediaQuery: ${screenSize.width.toStringAsFixed(2)}',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      'LayoutBuilder: ${constraints.maxWidth}',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                );
               },
-            )
-          ],
-        ),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return Container(
+                  color: Colors.white,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'MediaQuery: ${screenSize.width.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                            color: Colors.blueGrey, fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'LayoutBuilder: ${constraints.maxWidth}',
+                        style: const TextStyle(
+                            color: Colors.blueGrey, fontSize: 18),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
