@@ -10,22 +10,28 @@ class ObscuredTextFieldSample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: numberList.map((number) {
+      body: ListView.separated(
+        itemCount: numberList.length,
+        itemBuilder: (BuildContext context, int index) {
           return Container(
             height: 250,
             decoration: BoxDecoration(
               color: Colors.grey,
-              border: Border.all(color: Colors.black),
+              border: Border.all(
+                color: Colors.black,
+              ),
             ),
             child: Center(
               child: Text(
-                '$number',
+                '${numberList[index]}',
                 style: const TextStyle(fontSize: 50),
               ),
             ),
           );
-        }).toList(),
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return Divider();
+        },
       ),
     );
   }
