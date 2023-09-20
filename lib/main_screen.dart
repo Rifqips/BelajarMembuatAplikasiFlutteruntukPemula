@@ -110,7 +110,7 @@ class TourismPlaceGrid extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: Image.asset(
+                    child: Image.network(
                       place.imageAsset,
                       fit: BoxFit.cover,
                     ),
